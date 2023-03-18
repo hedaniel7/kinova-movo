@@ -18,12 +18,12 @@
         
             <visual>
                 <geometry>
-                    <mesh filename="package://movo_description/meshes/manipulation/kinova_grippers/visual/kg2_base_link.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/kinova_grippers/visual/kg2_base_link.dae"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://movo_description/meshes/manipulation/kinova_grippers/collision/kg2_base_link.stl"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/kinova_grippers/collision/kg2_base_link.obj"/>
                 </geometry>
             </collision>
             <inertial>
@@ -57,20 +57,33 @@
         <link name="${prefix}gripper_finger2_knuckle_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://movo_description/meshes/manipulation/kinova_grippers/visual/finger_knuckle.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/kinova_grippers/visual/finger_knuckle.dae"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://movo_description/meshes/manipulation/kinova_grippers/collision/finger_knuckle.stl"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/kinova_grippers/collision/finger_knuckle.obj"/>
                 </geometry>
             </collision>
             <inertial>
+                <!-- russt: replace these using drake's mesh_to_sdf -->
+                <pose>0.000925589 -0.0179473 4.08395e-09 0 0 0</pose>
+                <mass>0.006837878460055832</mass>
+                <inertia>
+                  <ixx>1.2773e-06</ixx>
+                  <ixy>7.66328e-08</ixy>
+                  <ixz>-1.1905e-13</ixz>
+                  <iyy>2.50863e-07</iyy>
+                  <iyz>4.97761e-13</iyz>
+                  <izz>1.38456e-06</izz>
+                </inertia>
+                <!-- these original values aren't physically valid 
                 <mass value="0.009127" />
                 <origin xyz="-0.016752 -0.013874 0.0" />
                 <inertia ixx = "0.000002" ixy = "0.000001" ixz = "0.000000"
                          iyx = "0.000001" iyy = "0.000001" iyz = "0.000000"
                          izx = "0.000000" izy = "0.000000" izz = "0.000002" />
+                -->
             </inertial>
         </link>
         
@@ -95,20 +108,33 @@
         <link name="${prefix}gripper_finger1_knuckle_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://movo_description/meshes/manipulation/kinova_grippers/visual/finger_knuckle.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/kinova_grippers/visual/finger_knuckle.dae"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://movo_description/meshes/manipulation/kinova_grippers/collision/finger_knuckle.stl"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/kinova_grippers/collision/finger_knuckle.obj"/>
                 </geometry>
             </collision>
             <inertial>
+                <!-- russt: replace these using drake's mesh_to_sdf -->
+                <pose>0.000925589 -0.0179473 4.08395e-09 0 0 0</pose>
+                <mass>0.006837878460055832</mass>
+                <inertia>
+                  <ixx>1.2773e-06</ixx>
+                  <ixy>7.66328e-08</ixy>
+                  <ixz>-1.1905e-13</ixz>
+                  <iyy>2.50863e-07</iyy>
+                  <iyz>4.97761e-13</iyz>
+                  <izz>1.38456e-06</izz>
+                </inertia>
+                <!-- these original values aren't physically valid 
                 <mass value="0.009127" />
                 <origin xyz="-0.016752 -0.013874 0.0" />
                 <inertia ixx = "0.000002" ixy = "0.000001" ixz = "0.000000"
                          iyx = "0.000001" iyy = "0.000001" iyz = "0.000000"
                          izx = "0.000000" izy = "0.000000" izz = "0.000002" />
+                -->
             </inertial>
         </link>
         
@@ -131,20 +157,33 @@
         <link name="${prefix}gripper_finger2_finger_tip_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://movo_description/meshes/manipulation/kinova_grippers/visual/finger_tip.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/kinova_grippers/visual/finger_tip.dae"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://movo_description/meshes/manipulation/kinova_grippers/collision/finger_tip.stl"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/kinova_grippers/collision/finger_tip.obj"/>
                 </geometry>
             </collision>
             <inertial>
+                <!-- russt: set these using drake's mesh to sdf -->
+                <pose>0.0148543 -0.00150728 -1.56703e-09 0 0 0</pose>
+                <mass>0.012779909194886162</mass>
+                <inertia>
+                  <ixx>1.05756e-06</ixx>
+                  <ixy>-9.59984e-07</ixy>
+                  <ixz>2.26386e-13</ixz>
+                  <iyy>3.44081e-06</iyy>
+                  <iyz>-1.09241e-14</iyz>
+                  <izz>3.8057e-06</izz>
+                </inertia>
+                <!-- these original values aren't physically valid 
                 <mass value="0.012690" />
                 <origin xyz="-0.011926 -0.009701 0.0" />
                 <inertia ixx = "0.000002" ixy = "0.000001" ixz = "0.000000"
                          iyx = "0.000001" iyy = "0.000001" iyz = "0.000000"
                          izx = "0.000000" izy = "0.000000" izz = "0.000002" />
+                -->                         
             </inertial>
         </link>
         
@@ -168,12 +207,12 @@
         <link name="${prefix}gripper_finger1_finger_tip_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://movo_description/meshes/manipulation/kinova_grippers/visual/finger_tip.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/kinova_grippers/visual/finger_tip.dae"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://movo_description/meshes/manipulation/kinova_grippers/collision/finger_tip.stl"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/kinova_grippers/collision/finger_tip.obj"/>
                 </geometry>
             </collision>
             <inertial>

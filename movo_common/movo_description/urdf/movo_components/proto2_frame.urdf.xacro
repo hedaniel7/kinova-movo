@@ -40,12 +40,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    <link name="proto2_frame_link">
 			<visual>
 				<geometry>
-					<mesh filename="package://movo_description/meshes/proto2/visual/proto2_frame.dae" />
+					<mesh filename="package://QR/movo_description_drake/meshes/proto2/visual/proto2_frame.dae" />
 				</geometry>
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="package://movo_description/meshes/proto2/collision/proto2_frame_collision.stl" />
+					<mesh filename="package://QR/movo_description_drake/meshes/proto2/collision/proto2_frame_collision.obj" />
 				</geometry>
 			</collision>
 		    <inertial>

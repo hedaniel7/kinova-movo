@@ -32,9 +32,59 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <!-- Wheel Mounting Positions and Properties-->
     <xacro:property name="wheel_radius" value="0.0762" />
     <xacro:property name="M_PI" value="3.14159"/>
-	<xacro:macro name="movo_base">
-        <!-- Base link is the center of the robot's chassis between the motors projected on the ground -->
+	  <xacro:macro name="movo_base">
+        <!-- russt: added an actuated planar joint to the base. -->
+        <link name="base_link_0"/>
+        <link name="base_link_1"/>
         <link name="base_link"/>
+        <joint name="x" type="prismatic">
+          <parent link="world"/>
+          <child link="base_link_0"/>
+          <axis xyz="1 0 0"/>
+          <limit effort="1000.0" lower="-2.5" upper="2.5" velocity="1.0"/>
+        </joint>
+        <joint name="y" type="prismatic">
+          <parent link="base_link_0"/>
+          <child link="base_link_1"/>
+          <axis xyz="0 1 0"/>
+          <limit effort="1000.0" lower="-2.5" upper="2.5" velocity="1.0"/>
+        </joint>
+        <joint name="theta" type="continuous">
+          <parent link="base_link_1"/>
+          <child link="base_link"/>
+          <axis xyz="0 0 1"/>
+          <limit effort="1000.0" velocity="1.5708"/>
+        </joint>
+        <transmission name="x_trans">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="x">
+            <hardwareInterface>PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="x">
+            <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+        </transmission>
+        <transmission name="y_trans">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="y">
+            <hardwareInterface>PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="y">
+            <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+        </transmission>
+        <transmission name="theta_trans">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="theta">
+            <hardwareInterface>PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="theta">
+            <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+        </transmission>
+
+        <!-- Base link is the center of the robot's chassis between the motors projected on the ground -->
+        <!--<link name="base_link"/>-->
         
         <gazebo reference="base_link">
             <mu1>0.0</mu1>
@@ -56,13 +106,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			</inertial>
             <collision>
 				<geometry>
-					<mesh filename="package://movo_description/meshes/movo_components/collision/vector_base_collision.stl" />
+					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/vector_base_collision.obj" />
 				</geometry>
 			</collision>
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://movo_description/meshes/movo_components/visual/vector_base.dae" />
+					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/visual/vector_base.dae" />
 				</geometry>
 			</visual>
 		</link>
@@ -91,13 +141,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			</inertial>
             <collision>
 				<geometry>
-					<mesh filename="package://movo_description/meshes/movo_components/collision/movo_fixed_body_collision.stl" />
+					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/movo_fixed_body_collision.obj" />
 				</geometry>
 			</collision>
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://movo_description/meshes/movo_components/visual/movo_fixed_payload.dae" />
+					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/visual/movo_fixed_payload.dae" />
 				</geometry>
 			</visual>
 		</link>
@@ -118,12 +168,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="linear_actuator_link">
 		    <visual>
 			    <geometry>
-				    <mesh filename="package://movo_description/meshes/movo_components/visual/movo_moving_payload.dae" />
+				    <mesh filename="package://QR/movo_description_drake/meshes/movo_components/visual/movo_moving_payload.dae" />
 			    </geometry>
 		    </visual>
 		    <collision>
 			    <geometry>
-				    <mesh filename="package://movo_description/meshes/movo_components/collision/movo_upper_body_collision.stl" />
+				    <mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/movo_upper_body_collision.obj" />
 			    </geometry>
 		    </collision>
 	        <inertial>

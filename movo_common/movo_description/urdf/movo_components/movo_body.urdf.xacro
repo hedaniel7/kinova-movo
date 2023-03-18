@@ -50,7 +50,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://movo_description/meshes/movo_body/movo_lower_body.dae" />
+					<mesh filename="package://QR/movo_description_drake/meshes/movo_body/movo_lower_body.dae" />
 				</geometry>
 			</visual>
 		</link>
@@ -72,7 +72,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://movo_description/meshes/movo_body/movo_upper_body.dae" />
+					<mesh filename="package://QR/movo_description_drake/meshes/movo_body/movo_upper_body.dae" />
 				</geometry>
 			</visual>
 		</link>
@@ -98,7 +98,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://movo_description/meshes/movo_body/movo_mid_body.dae" />
+					<mesh filename="package://QR/movo_description_drake/meshes/movo_body/movo_mid_body.dae" />
 				</geometry>
 			</visual>
 		</link>

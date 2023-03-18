@@ -38,20 +38,33 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         
 	    <link name="${prefix}_link">
             <inertial>
+                <!-- russt: changed these using drake's mesh_to_sdf -->
+                <pose>-0.00351257 0.00155128 0.0369668 0 0 0</pose>
+                <mass>0.8718110579379514</mass>
+                <inertia>
+                  <ixx>0.00398348</ixx>
+                  <ixy>2.33406e-05</ixy>
+                  <ixz>1.6376e-05</ixz>
+                  <iyy>0.000647219</iyy>
+                  <iyz>1.14248e-05</iyz>
+                  <izz>0.00411049</izz>
+                </inertia>
+                <!-- these original values weren't physically valid 
                 <mass value="1.4"/>
                 <origin xyz="-0.000036 0.021015 -0.052191"/>
                 <inertia ixx="0.0006835"  ixy="-0.000042"  ixz="0.000010"
                          iyx="-0.000042"  iyy="0.001197"   iyz="0.000006"
                          izx="0.000010"   izy="0.000006"   izz="0.007020" />
+                -->                         
             </inertial>
 			<visual>
 				<geometry>
-					<mesh filename="package://movo_description/meshes/sensors/visual/kinect_one.dae" />
+					<mesh filename="package://QR/movo_description_drake/meshes/sensors/visual/kinect_one.dae" />
 				</geometry>
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="package://movo_description/meshes/sensors/collision/kinect_one_collision.stl" />
+					<mesh filename="package://QR/movo_description_drake/meshes/sensors/collision/kinect_one_collision.obj" />
 				</geometry>
 			</collision>
 		</link>
