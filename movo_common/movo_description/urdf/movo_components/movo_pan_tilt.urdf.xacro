@@ -44,6 +44,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 				<geometry>
 					<mesh filename="package://QR/movo_description_drake/meshes/pan_tilt/visual/pan_tilt_base.dae" />
 				</geometry>
+        <material>
+          <color rgba="0.1788232 0.1788232 0.1788232 1"/>
+        </material>
 			</visual>
 			<collision>
 				<geometry>
@@ -82,6 +85,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 				<geometry>
 					<mesh filename="package://QR/movo_description_drake/meshes/pan_tilt/visual/pan_link.dae" />
 				</geometry>
+        <material>
+          <color rgba="0.1788232 0.1788232 0.1788232 1"/>
+        </material>
 			</visual>
 			<collision>
 			    <origin xyz="0 0 0" rpy="0 0 0" />
@@ -121,6 +127,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 				<geometry>
 					<mesh filename="package://QR/movo_description_drake/meshes/pan_tilt/visual/tilt_link.dae" />
 				</geometry>
+        <material>
+          <color rgba="0.1788232 0.1788232 0.1788232 1"/>
+        </material>
 			</visual>
 			<collision>
 				<geometry>

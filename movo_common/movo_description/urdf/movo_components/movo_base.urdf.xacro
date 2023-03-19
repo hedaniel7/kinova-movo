@@ -114,6 +114,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 				<geometry>
 					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/visual/vector_base.dae" />
 				</geometry>
+        <material>
+          <color rgba="0.1788232 0.1788232 0.1788232 1"/>
+        </material>
 			</visual>
 		</link>
 		
