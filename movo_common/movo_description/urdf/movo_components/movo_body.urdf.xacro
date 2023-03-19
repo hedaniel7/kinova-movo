@@ -77,16 +77,31 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			</visual>
 		</link>
 		
+        <!-- russt: make this fixed for now; it was causing problems with the inverse dynamics controllers.  
         <joint name="mid_body_joint" type="prismatic">
+        -->
+        <joint name="mid_body_joint" type="fixed">
             <parent link="base_chassis_link" />
             <child link = "mid_body_link" />
             <origin xyz="0.0771402 0 0.3938763" rpy="0 0 0" />
             <axis xyz="0 0 1" />
             <limit lower="0.0" upper="0.2545608" effort="1000" velocity="0.20"/>
             <dynamics damping="0.0" friction="0.0"/>
-            <mimic joint="linear_joint" multiplier="0.5" offset="0.0" />
+            <!-- <mimic joint="linear_joint" multiplier="0.5" offset="0.0" /> -->
         </joint>
-        
+
+        <!-- russt: add transmission to avoid mimic joint 
+        <transmission name="mid_body_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="mid_body_joint">
+                <hardwareInterface>PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="mid_body_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>  -->
+
+
         <link name="mid_body_link">
 			<inertial>
 				<mass value="2.246837" />

@@ -13,7 +13,31 @@
                 <hardwareInterface>EffortJointInterface</hardwareInterface>
             </actuator>
         </transmission>
-        
+
+        <!-- russt: add extra transmissions to avoid mimic joints -->
+        <transmission name="${prefix}gripper_finger2_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}gripper_finger2_joint">
+                <hardwareInterface>EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}gripper_finger2_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+                <hardwareInterface>EffortJointInterface</hardwareInterface>
+            </actuator>
+        </transmission>
+
+        <transmission name="${prefix}gripper_finger3_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}gripper_finger3_joint">
+                <hardwareInterface>EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}gripper_finger3_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+                <hardwareInterface>EffortJointInterface</hardwareInterface>
+            </actuator>
+        </transmission>
+        <!-- end of extra transmissions -->
+
         <gazebo>
                 <!-- loading plugin: mimic joints works in gazebo now -->
             <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="${prefix}mimic_finger_1_2">

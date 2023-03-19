@@ -103,7 +103,7 @@
             <axis xyz="0 0 1"/>
             <origin rpy="${M_PI/2} 0 1.7555" xyz="0.022289 -0.027253 -0.11471"/>
             <limit lower="0.0" upper="0.986111027" velocity="1.0" effort="3.0" damping="0.005" friction="0.005"/>
-            <mimic joint="${prefix}gripper_finger1_joint"/>
+            <!-- <mimic joint="${prefix}gripper_finger1_joint"/> -->
         </joint>
         
         <link name="${prefix}gripper_finger2_knuckle_link">
@@ -155,7 +155,7 @@
             <axis xyz="0 0 1"/>
             <origin rpy="${M_PI/2} 0 1.3861" xyz="-0.022284 -0.027223 -0.11473"/>
             <limit lower="0.0" upper="0.986111027" velocity="1.0" effort="3.0" damping="0.005" friction="0.005"/>
-            <mimic joint="${prefix}gripper_finger1_joint"/>
+            <!-- <mimic joint="${prefix}gripper_finger1_joint"/> -->
         </joint>
         
         <link name="${prefix}gripper_finger3_knuckle_link">

@@ -216,11 +216,24 @@
                 </geometry>
             </collision>
             <inertial>
+                <!-- russt: set these using drake's mesh to sdf -->
+                <pose>0.0148543 -0.00150728 -1.56703e-09 0 0 0</pose>
+                <mass>0.012779909194886162</mass>
+                <inertia>
+                  <ixx>1.05756e-06</ixx>
+                  <ixy>-9.59984e-07</ixy>
+                  <ixz>2.26386e-13</ixz>
+                  <iyy>3.44081e-06</iyy>
+                  <iyz>-1.09241e-14</iyz>
+                  <izz>3.8057e-06</izz>
+                </inertia>
+                <!-- these original values aren't physically valid 
                 <mass value="0.012690" />
                 <origin xyz="-0.011926 -0.009701 0.0" />
                 <inertia ixx = "0.000002" ixy = "0.000001" ixz = "0.000000"
                          iyx = "0.000001" iyy = "0.000001" iyz = "0.000000"
                          izx = "0.000000" izy = "0.000000" izz = "0.000002" />
+                -->                         
             </inertial>
         </link>
         

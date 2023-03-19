@@ -139,11 +139,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                          iyx="0.000047"  iyy="0.968691" iyz="-0.000058"
                          izx="0.053722" izy="-0.000058" izz="0.098853" />
 			</inertial>
+        <!-- russt: removed this because it was causing self collisions 
             <collision>
 				<geometry>
 					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/movo_fixed_body_collision.obj" />
 				</geometry>
 			</collision>
+      -->
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
@@ -171,11 +173,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 				    <mesh filename="package://QR/movo_description_drake/meshes/movo_components/visual/movo_moving_payload.dae" />
 			    </geometry>
 		    </visual>
+        <!-- russt: removed this because it was causing self-collisions 
 		    <collision>
 			    <geometry>
 				    <mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/movo_upper_body_collision.obj" />
 			    </geometry>
 		    </collision>
+        -->
 	        <inertial>
                 <mass value="12.926242" />
                 <origin xyz="-0.075467 -0.004693 0.397754"/>
