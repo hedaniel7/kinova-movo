@@ -3,6 +3,7 @@
 
   <xacro:macro name="robotiq_85_gripper_transmission" params="prefix">
 
+        <!-- russt: i've fixed this joint 
         <transmission name="${prefix}gripper_finger1_trans">
             <type>transmission_interface/SimpleTransmission</type>
             <joint name="${prefix}gripper_finger1_joint">
@@ -13,7 +14,56 @@
                 <hardwareInterface>PositionJointInterface</hardwareInterface>
             </actuator>
         </transmission>
-        
+        -->
+
+        <!-- russt: add extra transmissions to overcome missing mimic joints -->
+        <!--
+        <transmission name="${prefix}gripper_finger1_inner_knuckle_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}gripper_finger1_inner_knuckle_joint">
+                <hardwareInterface>PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}gripper_finger1_inner_knuckle_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+                <hardwareInterface>PositionJointInterface</hardwareInterface>
+            </actuator>
+        </transmission>
+
+        <transmission name="${prefix}gripper_finger2_inner_knuckle_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}gripper_finger2_inner_knuckle_joint">
+                <hardwareInterface>PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}gripper_finger2_inner_knuckle_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+                <hardwareInterface>PositionJointInterface</hardwareInterface>
+            </actuator>
+        </transmission>
+
+        <transmission name="${prefix}gripper_finger1_finger_tip_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}gripper_finger1_finger_tip_joint">
+                <hardwareInterface>PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}gripper_finger1_finger_tip_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+                <hardwareInterface>PositionJointInterface</hardwareInterface>
+            </actuator>
+        </transmission>
+
+        <transmission name="${prefix}gripper_finger2_finger_tip_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}gripper_finger2_finger_tip_joint">
+                <hardwareInterface>PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}gripper_finger2_finger_tip_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+                <hardwareInterface>PositionJointInterface</hardwareInterface>
+            </actuator>
+        </transmission>
+        -->
+        <!-- russt: end new transmissions -->
+
         <gazebo>
                 <!-- loading plugin: mimic joints works in gazebo now -->
             <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="${prefix}mimic_robotiq_85_1">

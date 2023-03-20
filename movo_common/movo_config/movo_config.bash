@@ -81,8 +81,8 @@ export MOVO_HAS_LEFT_KG3_GRIPPER=false
 
 #Robotiq 85 two finger gripper
 export USE_R85_FOR_MOVEIT_CONFIG=false
-export MOVO_HAS_RIGHT_ROBOTIQ_GRIPPER=false
-export MOVO_HAS_LEFT_ROBOTIQ_GRIPPER=false
+export MOVO_HAS_RIGHT_ROBOTIQ_GRIPPER=true
+export MOVO_HAS_LEFT_ROBOTIQ_GRIPPER=true
 
 #export for kinect2 bridge
 export OCL_IGNORE_SELF_TEST=1

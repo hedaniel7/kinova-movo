@@ -599,5 +599,14 @@
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </actuator>
   </transmission>
+
+    <joint name="${prefix}ee_fixed_joint" type="fixed">
+        <parent link="${prefix}link_7" />
+        <child link="${prefix}ee_link" />
+        <origin xyz="0 0 -0.1600" rpy="${M_PI} ${M_PI/2} 0"/>
+    </joint>
+
+    <link name="${prefix}ee_link"/>  
+
   </xacro:macro>
 </robot>
