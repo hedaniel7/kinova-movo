@@ -91,7 +91,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </gazebo>
 		        
         <joint name="base_chassis_joint" type="fixed">
-            <origin xyz="0 0 ${wheel_radius}" rpy="0 0 0" />
+            <origin xyz="0 0 ${wheel_radius + 0.01}" rpy="0 0 0" />
             <parent link="base_link" />
             <child link="base_chassis_link" />
         </joint>

@@ -4,6 +4,13 @@
 <robot name="robotiq_85_gripper" xmlns:xacro="http://ros.org/wiki/xacro" xmlns:drake="http://drake.mit.edu">
     <xacro:include filename="$(find movo_description)/urdf/manipulation/robotiq/robotiq_85_gripper.transmission.xacro" />
     <xacro:property name="M_PI" value="3.14159"/>
+    <xacro:if value="$(optenv WELD_FINGERS false)">
+      <xacro:property name="revolute_or_fixed" value="fixed"/>
+    </xacro:if>  
+    <xacro:unless value="$(optenv WELD_FINGERS false)">
+      <xacro:property name="revolute_or_fixed" value="revolute"/>
+    </xacro:unless>  
+
     
     <xacro:macro name="robotiq_85_gripper" params="prefix parent *origin">
 
@@ -77,9 +84,7 @@
             <kd>1.0</kd>
         </gazebo>   
 
-        <!-- russt: fix this to overcome mimic 
-        <joint name="${prefix}gripper_finger1_joint" type="revolute"> -->
-        <joint name="${prefix}gripper_finger1_joint" type="fixed">
+        <joint name="${prefix}gripper_finger1_joint" type="${revolute_or_fixed}">
             <parent link="${prefix}gripper_base_link"/>
             <child link="${prefix}gripper_finger1_knuckle_link"/>
             <axis xyz="0 0 1"/>
@@ -87,15 +92,15 @@
             <limit lower="0.0" upper="0.804" velocity="2.0" effort="1000"/>
         </joint>
 
-        <!-- russt: fix this to overcome mimic 
-        <joint name="${prefix}gripper_finger2_joint" type="revolute"> -->
-        <joint name="${prefix}gripper_finger2_joint" type="fixed">
+        <joint name="${prefix}gripper_finger2_joint" type="${revolute_or_fixed}"> 
             <parent link="${prefix}gripper_base_link"/>
             <child link="${prefix}gripper_finger2_knuckle_link"/>
             <axis xyz="0 0 1"/>
             <origin rpy="0.0 0.0 0.0" xyz="0.05490451627 -0.03060114443 0.0"/>
             <limit lower="-3.14" upper="3.14" velocity="100.0" effort="1000"/>
-            <!-- russt: remove this until inverse dynamics supports it <mimic joint="${prefix}gripper_finger1_joint"/> -->
+            <xacro:unless value="$(optenv WELD_FINGERS false)">
+              <mimic joint="${prefix}gripper_finger1_joint"/>
+            </xacro:unless>
         </joint>
 
         <link name="${prefix}gripper_finger1_knuckle_link">
@@ -222,30 +227,26 @@
             <kd>1.0</kd>
         </gazebo>  
 
-        <!-- russt: fix this for now 
-        <joint name="${prefix}gripper_finger1_inner_knuckle_joint" type="continuous"> -->
-        <joint name="${prefix}gripper_finger1_inner_knuckle_joint" type="fixed">
+        <joint name="${prefix}gripper_finger1_inner_knuckle_joint" type="${revolute_or_fixed}"> 
             <parent link="${prefix}gripper_base_link"/>
             <child link="${prefix}gripper_finger1_inner_knuckle_link"/>
             <axis xyz="0 0 1"/>
             <origin xyz="0.06142 0.0127 0" rpy="${M_PI} 0.0 0.0" />
             <limit lower="-3.14" upper="3.14" velocity="100.0" effort="0.1"/>
-            <!-- russt: remove this for now 
-            <mimic joint="${prefix}gripper_finger1_joint" offset="0"/>
-            -->
+            <xacro:unless value="$(optenv WELD_FINGERS false)">
+              <mimic joint="${prefix}gripper_finger1_joint" offset="0"/>
+            </xacro:unless>
         </joint>
 
-        <!-- russt: fix this for now 
-        <joint name="${prefix}gripper_finger2_inner_knuckle_joint" type="continuous"> -->
-        <joint name="${prefix}gripper_finger2_inner_knuckle_joint" type="fixed">
+        <joint name="${prefix}gripper_finger2_inner_knuckle_joint" type="${revolute_or_fixed}">
             <parent link="${prefix}gripper_base_link"/>
             <child link="${prefix}gripper_finger2_inner_knuckle_link"/>
             <axis xyz="0 0 1"/>
             <origin xyz="0.06142 -0.0127 0" rpy="0 0 0"/>
             <limit lower="-3.14" upper="3.14" velocity="100.0" effort="0.1"/>
-            <!-- russt: remove this for now 
-            <mimic joint="${prefix}gripper_finger1_joint" offset="0"/>
-            -->
+            <xacro:unless value="$(optenv WELD_FINGERS false)">
+              <mimic joint="${prefix}gripper_finger1_joint" offset="0"/>
+            </xacro:unless>
         </joint>
 
         <link name="${prefix}gripper_finger1_inner_knuckle_link">
@@ -304,30 +305,26 @@
             <kd>1.0</kd>
         </gazebo> 
 
-        <!-- russt: fix this for now 
-        <joint name="${prefix}gripper_finger1_finger_tip_joint" type="continuous">-->
-        <joint name="${prefix}gripper_finger1_finger_tip_joint" type="fixed">
+        <joint name="${prefix}gripper_finger1_finger_tip_joint" type="${revolute_or_fixed}">
             <parent link="${prefix}gripper_finger1_inner_knuckle_link"/>
             <child link="${prefix}gripper_finger1_finger_tip_link"/>
             <axis xyz="0 0 1"/>
             <origin xyz="0.04303959807 -0.03759940821 0.0" rpy="0.0 0.0 0.0"/>
             <limit lower="-3.14" upper="3.14" velocity="100.0" effort="0.1"/>
-            <!-- russt: remove this for now 
-            <mimic joint="${prefix}gripper_finger1_joint" multiplier="-1"/>
-            -->
+            <xacro:unless value="$(optenv WELD_FINGERS false)">
+              <mimic joint="${prefix}gripper_finger1_joint" multiplier="-1"/>
+            </xacro:unless>
         </joint>
 
-        <!-- russt: fix this for now 
-        <joint name="${prefix}gripper_finger2_finger_tip_joint" type="continuous"> -->
-        <joint name="${prefix}gripper_finger2_finger_tip_joint" type="fixed">
+        <joint name="${prefix}gripper_finger2_finger_tip_joint" type="${revolute_or_fixed}">
             <parent link="${prefix}gripper_finger2_inner_knuckle_link"/>
             <child link="${prefix}gripper_finger2_finger_tip_link"/>
             <axis xyz="0 0 1"/>
             <origin rpy="0.0 0.0 0.0" xyz="0.04303959807 -0.03759940821  0.0"/>
             <limit lower="-3.14" upper="3.14" velocity="100.0" effort="0.1"/>
-            <!-- russt: remove this for now 
-            <mimic joint="${prefix}gripper_finger1_joint" multiplier="-1"/>
-            -->
+            <xacro:unless value="$(optenv WELD_FINGERS false)">
+              <mimic joint="${prefix}gripper_finger1_joint" multiplier="-1"/>
+            </xacro:unless>
         </joint>
 
 
