@@ -3,6 +3,29 @@
 
   <xacro:macro name="robotiq_85_gripper_transmission" params="prefix">
 
+        <xacro:if value="$(optenv REPLACE_MIMIC false)">
+          <transmission name="${prefix}gripper_finger1_trans">
+              <type>transmission_interface/SimpleTransmission</type>
+              <joint name="${prefix}gripper_finger1_inner_knuckle_joint">
+                  <hardwareInterface>PositionJointInterface</hardwareInterface>
+              </joint>
+              <actuator name="${prefix}gripper_finger1_motor">
+                  <mechanicalReduction>1</mechanicalReduction>
+                  <hardwareInterface>PositionJointInterface</hardwareInterface>
+              </actuator>
+          </transmission>
+          <transmission name="${prefix}gripper_finger2_trans">
+              <type>transmission_interface/SimpleTransmission</type>
+              <joint name="${prefix}gripper_finger2_inner_knuckle_joint">
+                  <hardwareInterface>PositionJointInterface</hardwareInterface>
+              </joint>
+              <actuator name="${prefix}gripper_finger2_motor">
+                  <mechanicalReduction>1</mechanicalReduction>
+                  <hardwareInterface>PositionJointInterface</hardwareInterface>
+              </actuator>
+          </transmission>
+        </xacro:if>
+        <xacro:unless value="$(optenv REPLACE_MIMIC false)">
         <xacro:unless value="$(optenv WELD_FINGERS false)">
           <transmission name="${prefix}gripper_finger1_trans">
               <type>transmission_interface/SimpleTransmission</type>
@@ -14,6 +37,7 @@
                   <hardwareInterface>PositionJointInterface</hardwareInterface>
               </actuator>
           </transmission>
+        </xacro:unless>
         </xacro:unless>
 
         <gazebo>

@@ -4,14 +4,19 @@
 <robot name="robotiq_85_gripper" xmlns:xacro="http://ros.org/wiki/xacro" xmlns:drake="http://drake.mit.edu">
     <xacro:include filename="$(find movo_description)/urdf/manipulation/robotiq/robotiq_85_gripper.transmission.xacro" />
     <xacro:property name="M_PI" value="3.14159"/>
+    <xacro:if value="$(optenv REPLACE_MIMIC false)">
+      <xacro:property name="revolute_or_fixed_1" value="fixed"/>
+    </xacro:if>  
+    <xacro:unless value="$(optenv REPLACE_MIMIC false)">
+      <xacro:property name="revolute_or_fixed_1" value="revolute"/>
+    </xacro:unless>  
     <xacro:if value="$(optenv WELD_FINGERS false)">
-      <xacro:property name="revolute_or_fixed" value="fixed"/>
+      <xacro:property name="revolute_or_fixed" value="${revolute_or_fixed_1}"/>
     </xacro:if>  
     <xacro:unless value="$(optenv WELD_FINGERS false)">
-      <xacro:property name="revolute_or_fixed" value="revolute"/>
+      <xacro:property name="revolute_or_fixed" value="${revolute_or_fixed_1}"/>
     </xacro:unless>  
 
-    
     <xacro:macro name="robotiq_85_gripper" params="prefix parent *origin">
 
         <joint name="${prefix}kinova_robotiq_coupler_joint" type="fixed">
@@ -23,7 +28,7 @@
         <link name="${prefix}robotiq_coupler_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/kinova_robotiq_coupler.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/kinova_robotiq_coupler.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -59,7 +64,7 @@
         <link name="${prefix}gripper_base_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_base_link.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_base_link.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -98,15 +103,17 @@
             <axis xyz="0 0 1"/>
             <origin rpy="0.0 0.0 0.0" xyz="0.05490451627 -0.03060114443 0.0"/>
             <limit lower="-3.14" upper="3.14" velocity="100.0" effort="1000"/>
+            <xacro:unless value="$(optenv REPLACE_MIMIC false)">
             <xacro:unless value="$(optenv WELD_FINGERS false)">
               <mimic joint="${prefix}gripper_finger1_joint"/>
+            </xacro:unless>
             </xacro:unless>
         </joint>
 
         <link name="${prefix}gripper_finger1_knuckle_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_knuckle_link.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_knuckle_link.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -134,7 +141,7 @@
         <link name="${prefix}gripper_finger2_knuckle_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_knuckle_link.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_knuckle_link.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -174,7 +181,7 @@
         <link name="${prefix}gripper_finger1_finger_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_finger_link.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_finger_link.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -202,7 +209,7 @@
         <link name="${prefix}gripper_finger2_finger_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_finger_link.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_finger_link.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -227,32 +234,55 @@
             <kd>1.0</kd>
         </gazebo>  
 
+        <xacro:if value="$(optenv REPLACE_MIMIC false)">
+          <joint name="${prefix}gripper_finger1_inner_knuckle_joint" type="revolute"> 
+              <parent link="${prefix}gripper_base_link"/>
+              <child link="${prefix}gripper_finger1_inner_knuckle_link"/>
+              <axis xyz="0 0 1"/>
+              <origin xyz="0.06142 0.0127 0" rpy="${M_PI} 0.0 0.0" />
+              <limit lower="-3.14" upper="3.14" velocity="100.0" effort="0.1"/>
+          </joint>
+          <joint name="${prefix}gripper_finger2_inner_knuckle_joint" type="revolute">
+              <parent link="${prefix}gripper_base_link"/>
+              <child link="${prefix}gripper_finger2_inner_knuckle_link"/>
+              <axis xyz="0 0 1"/>
+              <origin xyz="0.06142 -0.0127 0" rpy="0 0 0"/>
+              <limit lower="-3.14" upper="3.14" velocity="100.0" effort="0.1"/>
+          </joint>
+
+        </xacro:if>
+        <xacro:unless value="$(optenv REPLACE_MIMIC false)">
         <joint name="${prefix}gripper_finger1_inner_knuckle_joint" type="${revolute_or_fixed}"> 
             <parent link="${prefix}gripper_base_link"/>
             <child link="${prefix}gripper_finger1_inner_knuckle_link"/>
             <axis xyz="0 0 1"/>
             <origin xyz="0.06142 0.0127 0" rpy="${M_PI} 0.0 0.0" />
             <limit lower="-3.14" upper="3.14" velocity="100.0" effort="0.1"/>
+            <xacro:unless value="$(optenv REPLACE_MIMIC false)">
             <xacro:unless value="$(optenv WELD_FINGERS false)">
               <mimic joint="${prefix}gripper_finger1_joint" offset="0"/>
             </xacro:unless>
+            </xacro:unless>
         </joint>
-
         <joint name="${prefix}gripper_finger2_inner_knuckle_joint" type="${revolute_or_fixed}">
             <parent link="${prefix}gripper_base_link"/>
             <child link="${prefix}gripper_finger2_inner_knuckle_link"/>
             <axis xyz="0 0 1"/>
             <origin xyz="0.06142 -0.0127 0" rpy="0 0 0"/>
             <limit lower="-3.14" upper="3.14" velocity="100.0" effort="0.1"/>
+            <xacro:unless value="$(optenv REPLACE_MIMIC false)">
             <xacro:unless value="$(optenv WELD_FINGERS false)">
               <mimic joint="${prefix}gripper_finger1_joint" offset="0"/>
             </xacro:unless>
+            </xacro:unless>
         </joint>
+
+        </xacro:unless>
 
         <link name="${prefix}gripper_finger1_inner_knuckle_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_inner_knuckle_link.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_inner_knuckle_link.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -280,7 +310,7 @@
         <link name="${prefix}gripper_finger2_inner_knuckle_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_inner_knuckle_link.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_inner_knuckle_link.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -311,8 +341,10 @@
             <axis xyz="0 0 1"/>
             <origin xyz="0.04303959807 -0.03759940821 0.0" rpy="0.0 0.0 0.0"/>
             <limit lower="-3.14" upper="3.14" velocity="100.0" effort="0.1"/>
+            <xacro:unless value="$(optenv REPLACE_MIMIC false)">
             <xacro:unless value="$(optenv WELD_FINGERS false)">
               <mimic joint="${prefix}gripper_finger1_joint" multiplier="-1"/>
+            </xacro:unless>
             </xacro:unless>
         </joint>
 
@@ -322,16 +354,17 @@
             <axis xyz="0 0 1"/>
             <origin rpy="0.0 0.0 0.0" xyz="0.04303959807 -0.03759940821  0.0"/>
             <limit lower="-3.14" upper="3.14" velocity="100.0" effort="0.1"/>
+            <xacro:unless value="$(optenv REPLACE_MIMIC false)">
             <xacro:unless value="$(optenv WELD_FINGERS false)">
               <mimic joint="${prefix}gripper_finger1_joint" multiplier="-1"/>
             </xacro:unless>
+            </xacro:unless>
         </joint>
-
 
         <link name="${prefix}gripper_finger1_finger_tip_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_finger_tip_link.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_finger_tip_link.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -359,7 +392,7 @@
         <link name="${prefix}gripper_finger2_finger_tip_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_finger_tip_link.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_finger_tip_link.obj"/>
                 </geometry>
             </visual>
             <collision>

@@ -112,7 +112,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/visual/vector_base.dae" />
+					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/vector_base_collision.obj" />
 				</geometry>
         <material>
           <color rgba="0.1788232 0.1788232 0.1788232 1"/>
@@ -152,7 +152,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/visual/movo_fixed_payload.dae" />
+					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/movo_fixed_body_collision.obj" />
 				</geometry>
 			</visual>
 		</link>
@@ -173,7 +173,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="linear_actuator_link">
 		    <visual>
 			    <geometry>
-				    <mesh filename="package://QR/movo_description_drake/meshes/movo_components/visual/movo_moving_payload.dae" />
+				    <mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/movo_upper_body_collision.obj" />
 			    </geometry>
 		    </visual>
         <!-- russt: removed this because it was causing self-collisions 

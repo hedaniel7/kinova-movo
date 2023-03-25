@@ -45,7 +45,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/proto2/collision/proto2_arm_mount_collision.obj" />
+					<mesh filename="package://QR/movo_description_drake/meshes/proto2/collision/proto2_arm_mount_collision.dae" />
 				</geometry>
 			</collision>
 		    <inertial>
