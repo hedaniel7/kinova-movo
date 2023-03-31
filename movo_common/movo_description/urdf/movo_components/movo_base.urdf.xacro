@@ -148,13 +148,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/movo_fixed_body_collision.obj" />
 				</geometry>
 			</collision>
-      -->
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
 					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/movo_fixed_body_collision.obj" />
 				</geometry>
 			</visual>
+      -->
 		</link>
 		
 		<gazebo reference="linear_actuator_fixed_link">
@@ -171,11 +171,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </joint>
 
         <link name="linear_actuator_link">
+        <!--
 		    <visual>
 			    <geometry>
 				    <mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/movo_upper_body_collision.obj" />
 			    </geometry>
-		    </visual>
+		    </visual>-->
         <!-- russt: removed this because it was causing self-collisions 
 		    <collision>
 			    <geometry>
