@@ -36,7 +36,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <xacro:include filename="$(find movo_description)/urdf/manipulation/robotiq/robotiq_85_gripper.urdf.xacro" />
     <!-- russt: use modified drake version for now 
     <xacro:include filename="$(find movo_description)/urdf/manipulation/kinova_grippers/kg3_gripper.urdf.xacro" /> -->
-    <xacro:include filename="$(find movo_description)/urdf/manipulation/kinova_grippers/j2s7s300_hand_sphere_collision.urdf.xacro" /> -->
+    <xacro:include filename="$(find movo_description)/urdf/manipulation/kinova_grippers/j2s7s300_hand_sphere_collision.urdf.xacro" />
     <xacro:include filename="$(find movo_description)/urdf/manipulation/kinova_grippers/kg2_gripper.urdf.xacro" />
     <xacro:include filename="$(find movo_description)/urdf/gzplugin_grasp_fix.urdf.xacro" />  
 

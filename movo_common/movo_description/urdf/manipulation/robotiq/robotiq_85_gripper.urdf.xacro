@@ -11,7 +11,7 @@
       <xacro:property name="revolute_or_fixed_1" value="revolute"/>
     </xacro:unless>  
     <xacro:if value="$(optenv WELD_FINGERS false)">
-      <xacro:property name="revolute_or_fixed" value="${revolute_or_fixed_1}"/>
+      <xacro:property name="revolute_or_fixed" value="fixed"/>
     </xacro:if>  
     <xacro:unless value="$(optenv WELD_FINGERS false)">
       <xacro:property name="revolute_or_fixed" value="${revolute_or_fixed_1}"/>

@@ -61,7 +61,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${prefix}base_link" >
             <visual>
                 <geometry>
-                <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/base.dae"/>
+                <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/base.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -100,7 +100,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${prefix}shoulder_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/shoulder_7dof.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/shoulder_7dof.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -139,7 +139,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${prefix}arm_half_1_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/arm_half_1.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/arm_half_1.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -178,7 +178,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          <link name="${prefix}arm_half_2_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/arm_half_2.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/arm_half_2.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -217,7 +217,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${prefix}forearm_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/forearm_7dof.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/forearm_7dof.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -247,7 +247,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${prefix}wrist_spherical_1_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/wrist_spherical_1.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/wrist_spherical_1.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -286,7 +286,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${prefix}wrist_spherical_2_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/wrist_spherical_2.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/wrist_spherical_2.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -326,7 +326,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${prefix}wrist_3_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/kinova_actuator_gearing.dae"/>
+                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/kinova_actuator_gearing.obj"/>
                 </geometry>
             </visual>
             <collision>

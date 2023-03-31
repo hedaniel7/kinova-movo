@@ -39,7 +39,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${laser_prefix}_laser_link">
 <!--            <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/sensors/visual/sick_tim.dae" />
+                    <mesh filename="package://QR/movo_description_drake/meshes/sensors/visual/sick_tim.obj" />
                 </geometry>
             </visual> -->
             <collision>
