@@ -112,7 +112,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/vector_base_collision.obj" />
+					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/visual/vector_base.obj" />
 				</geometry>
         <material>
           <color rgba="0.1788232 0.1788232 0.1788232 1"/>
