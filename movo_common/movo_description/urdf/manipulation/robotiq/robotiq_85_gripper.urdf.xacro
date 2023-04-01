@@ -420,7 +420,8 @@
         <xacro:robotiq_85_gripper_transmission prefix="${prefix}" />
 
         <drake:collision_filter_group name="${prefix}link_6_coupler">
-          <drake:member link="${prefix}link_6" />
+          <!-- <drake:member link="${prefix}link_6" /> -->
+          <drake:member link="${prefix}wrist_spherical_2_link" />
           <drake:member link="${prefix}robotiq_coupler_link" />
           <drake:member link="${prefix}gripper_base_link" />
           <drake:ignored_collision_filter_group name="${prefix}link_6_coupler" />

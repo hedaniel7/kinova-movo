@@ -80,9 +80,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <!-- Arms -->
     <xacro:if value="$(optenv MOVO_HAS_KINOVA_ARM false)"> 
     	<xacro:if value="$(optenv MOVO_HAS_KINOVA_ARM_7DOF false)">
-        <xacro:include filename="$(find movo_description)/urdf/manipulation/jaco/j2s7s300_arm_sphere_collision.urdf.xacro" />
-        <!-- russt: use Drake's jaco 7 dof model 
-    		<xacro:include filename="$(find movo_description)/urdf/manipulation/jaco/jaco_7dof.urdf.xacro" /> -->
+        <!-- <xacro:include filename="$(find movo_description)/urdf/manipulation/jaco/j2s7s300_arm_sphere_collision.urdf.xacro" /> -->
+    		<xacro:include filename="$(find movo_description)/urdf/manipulation/jaco/jaco_7dof.urdf.xacro" />
             <xacro:jaco_robot_7dof prefix="right_" parent="linear_actuator_link">
             <origin xyz="0.0261046 -0.13335 0.2799937" rpy="${-M_PI/2} 0 ${-M_PI/2}"/>
             </xacro:jaco_robot_7dof>
