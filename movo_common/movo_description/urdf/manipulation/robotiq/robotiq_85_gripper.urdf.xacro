@@ -368,9 +368,16 @@
                 </geometry>
             </visual>
             <collision>
+                <!-- box for finger tip computed by measuring in blender -->
+                <origin xyz="0.02575 0.004375 0" />
+                <geometry>
+                    <box size="0.0375 0.00675 0.022" />
+                </geometry>
+                <!--
                 <geometry>
                     <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_finger_tip_link.obj"/>
                 </geometry>
+              -->
             </collision>
             <inertial>
                 <mass value="0.019555" />
@@ -396,9 +403,16 @@
                 </geometry>
             </visual>
             <collision>
+                <!-- box for finger tip computed by measuring in blender -->
+                <origin xyz="0.02575 0.004375 0" />
+                <geometry>
+                    <box size="0.0375 0.00675 0.022" />
+                </geometry>
+                <!--
                 <geometry>
                     <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_finger_tip_link.obj"/>
                 </geometry>
+              -->
             </collision>
             <inertial>
                 <mass value="0.019555" />

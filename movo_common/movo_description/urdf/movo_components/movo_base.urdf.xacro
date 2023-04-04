@@ -34,6 +34,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <xacro:property name="M_PI" value="3.14159"/>
 	  <xacro:macro name="movo_base">
         <!-- russt: added an actuated planar joint to the base. -->
+        <link name="world"/>
         <link name="base_link_0"/>
         <link name="base_link_1"/>
         <link name="base_link"/>
