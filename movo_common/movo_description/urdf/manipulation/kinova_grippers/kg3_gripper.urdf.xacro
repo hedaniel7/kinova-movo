@@ -66,17 +66,11 @@
                 </geometry>
             </collision>
             <inertial>
-                <!-- russt: replace these using drake's mesh_to_sdf -->
-                <pose>0.000925589 -0.0179473 4.08395e-09 0 0 0</pose>
-                <mass>0.006837878460055832</mass>
-                <inertia>
-                  <ixx>1.2773e-06</ixx>
-                  <ixy>7.66328e-08</ixy>
-                  <ixz>-1.1905e-13</ixz>
-                  <iyy>2.50863e-07</iyy>
-                  <iyz>4.97761e-13</iyz>
-                  <izz>1.38456e-06</izz>
-                </inertia>
+                <!-- russt: replaced these using drake's mesh_to_sdf -->
+                <origin xyz="0.000925589 -0.0179473 4.08395e-09"/>
+                <mass value="0.006837878460055832" />
+                <inertia ixx="1.2773e-06"  ixy="7.66328e-08" ixz="-1.1905e-13"
+                         iyy="2.50863e-07" iyz="4.97761e-13" izz="1.38456e-06"/>
                 <!-- these original values aren't physically valid 
                 <mass value="0.009127" />
                 <origin xyz="-0.016752 -0.013874 0.0" />
@@ -118,17 +112,11 @@
                 </geometry>
             </collision>
             <inertial>
-                <!-- russt: replace these using drake's mesh_to_sdf -->
-                <pose>0.000925589 -0.0179473 4.08395e-09 0 0 0</pose>
-                <mass>0.006837878460055832</mass>
-                <inertia>
-                  <ixx>1.2773e-06</ixx>
-                  <ixy>7.66328e-08</ixy>
-                  <ixz>-1.1905e-13</ixz>
-                  <iyy>2.50863e-07</iyy>
-                  <iyz>4.97761e-13</iyz>
-                  <izz>1.38456e-06</izz>
-                </inertia>
+                <!-- russt: replaced these using drake's mesh_to_sdf -->
+                <origin xyz="0.000925589 -0.0179473 4.08395e-09"/>
+                <mass value="0.006837878460055832" />
+                <inertia ixx="1.2773e-06"  ixy="7.66328e-08" ixz="-1.1905e-13"
+                         iyy="2.50863e-07" iyz="4.97761e-13" izz="1.38456e-06"/>
                 <!-- these original values aren't physically valid 
                 <mass value="0.009127" />
                 <origin xyz="-0.016752 -0.013874 0.0" />
@@ -170,17 +158,11 @@
                 </geometry>
             </collision>
             <inertial>
-                <!-- russt: replace these using drake's mesh_to_sdf -->
-                <pose>0.000925589 -0.0179473 4.08395e-09 0 0 0</pose>
-                <mass>0.006837878460055832</mass>
-                <inertia>
-                  <ixx>1.2773e-06</ixx>
-                  <ixy>7.66328e-08</ixy>
-                  <ixz>-1.1905e-13</ixz>
-                  <iyy>2.50863e-07</iyy>
-                  <iyz>4.97761e-13</iyz>
-                  <izz>1.38456e-06</izz>
-                </inertia>
+                <!-- russt: replaced these using drake's mesh_to_sdf -->
+                <origin xyz="0.000925589 -0.0179473 4.08395e-09"/>
+                <mass value="0.006837878460055832" />
+                <inertia ixx="1.2773e-06"  ixy="7.66328e-08" ixz="-1.1905e-13"
+                         iyy="2.50863e-07" iyz="4.97761e-13" izz="1.38456e-06"/>
                 <!-- these original values aren't physically valid 
                 <mass value="0.009127" />
                 <origin xyz="-0.016752 -0.013874 0.0" />
@@ -220,16 +202,10 @@
             </collision>
             <inertial>
                 <!-- russt: set these using drake's mesh to sdf -->
-                <pose>0.0148543 -0.00150728 -1.56703e-09 0 0 0</pose>
-                <mass>0.012779909194886162</mass>
-                <inertia>
-                  <ixx>1.05756e-06</ixx>
-                  <ixy>-9.59984e-07</ixy>
-                  <ixz>2.26386e-13</ixz>
-                  <iyy>3.44081e-06</iyy>
-                  <iyz>-1.09241e-14</iyz>
-                  <izz>3.8057e-06</izz>
-                </inertia>
+                <origin xyz="0.0148543 -0.00150728 -1.56703e-09" />
+                <mass value="0.012779909194886162" />
+                <inertia ixx="1.05756e-06" ixy="-9.59984e-07" ixz="2.26386e-13" 
+                         iyy="3.44081e-06" iyz="-1.09241e-14" izz="3.8057e-06" />
                 <!-- these original values aren't physically valid 
                 <mass value="0.012690" />
                 <origin xyz="-0.011926 -0.009701 0.0" />
@@ -270,16 +246,10 @@
             </collision>
             <inertial>
                 <!-- russt: set these using drake's mesh to sdf -->
-                <pose>0.0148543 -0.00150728 -1.56703e-09 0 0 0</pose>
-                <mass>0.012779909194886162</mass>
-                <inertia>
-                  <ixx>1.05756e-06</ixx>
-                  <ixy>-9.59984e-07</ixy>
-                  <ixz>2.26386e-13</ixz>
-                  <iyy>3.44081e-06</iyy>
-                  <iyz>-1.09241e-14</iyz>
-                  <izz>3.8057e-06</izz>
-                </inertia>
+                <origin xyz="0.0148543 -0.00150728 -1.56703e-09" />
+                <mass value="0.012779909194886162" />
+                <inertia ixx="1.05756e-06" ixy="-9.59984e-07" ixz="2.26386e-13" 
+                         iyy="3.44081e-06" iyz="-1.09241e-14" izz="3.8057e-06" />
                 <!-- these original values aren't physically valid 
                 <mass value="0.012690" />
                 <origin xyz="-0.011926 -0.009701 0.0" />
@@ -318,16 +288,10 @@
             </collision>
             <inertial>
                 <!-- russt: set these using drake's mesh to sdf -->
-                <pose>0.0148543 -0.00150728 -1.56703e-09 0 0 0</pose>
-                <mass>0.012779909194886162</mass>
-                <inertia>
-                  <ixx>1.05756e-06</ixx>
-                  <ixy>-9.59984e-07</ixy>
-                  <ixz>2.26386e-13</ixz>
-                  <iyy>3.44081e-06</iyy>
-                  <iyz>-1.09241e-14</iyz>
-                  <izz>3.8057e-06</izz>
-                </inertia>
+                <origin xyz="0.0148543 -0.00150728 -1.56703e-09" />
+                <mass value="0.012779909194886162" />
+                <inertia ixx="1.05756e-06" ixy="-9.59984e-07" ixz="2.26386e-13" 
+                         iyy="3.44081e-06" iyz="-1.09241e-14" izz="3.8057e-06" />
                 <!-- these original values aren't physically valid 
                 <mass value="0.012690" />
                 <origin xyz="-0.011926 -0.009701 0.0" />

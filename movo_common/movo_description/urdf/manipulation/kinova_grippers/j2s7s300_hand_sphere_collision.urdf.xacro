@@ -18,7 +18,7 @@
       <geometry>
         <mesh filename="package://drake_models/jaco_description/meshes/hand_3finger.obj"/>
       </geometry>
-      <material>
+      <material name="black">
         <color rgba="0.1788232 0.1788232 0.1788232 1"/>
       </material>
     </visual>
@@ -26,7 +26,7 @@
       <geometry>
         <mesh filename="package://drake_models/jaco_description/meshes/ring_small.obj"/>
       </geometry>
-      <material>
+      <material name="black">
         <color rgba="0.627451 0.627451 0.627451 1"/>
       </material>
     </visual>
@@ -108,7 +108,7 @@
       <geometry>
         <mesh filename="package://drake_models/jaco_description/meshes/finger_proximal.obj"/>
       </geometry>
-      <material>
+      <material name="black">
         <color rgba="0.5960783 0.5960783 0.5960783 1"/>
       </material>
     </visual>
@@ -164,7 +164,7 @@
       <geometry>
         <mesh filename="package://drake_models/jaco_description/meshes/finger_distal.obj"/>
       </geometry>
-      <material>
+      <material name="black">
         <color rgba="0.5960783 0.5960783 0.5960783 1"/>
       </material>
     </visual>
@@ -216,7 +216,7 @@
       <geometry>
         <mesh filename="package://drake_models/jaco_description/meshes/finger_proximal.obj"/>
       </geometry>
-      <material>
+      <material name="black">
         <color rgba="0.5960783 0.5960783 0.5960783 1"/>
       </material>
     </visual>
@@ -272,7 +272,7 @@
       <geometry>
         <mesh filename="package://drake_models/jaco_description/meshes/finger_distal.obj"/>
       </geometry>
-      <material>
+      <material name="black">
         <color rgba="0.5960783 0.5960783 0.5960783 1"/>
       </material>
     </visual>
@@ -324,7 +324,7 @@
       <geometry>
         <mesh filename="package://drake_models/jaco_description/meshes/finger_proximal.obj"/>
       </geometry>
-      <material>
+      <material name="black">
         <color rgba="0.5960783 0.5960783 0.5960783 1"/>
       </material>
     </visual>
@@ -380,7 +380,7 @@
       <geometry>
         <mesh filename="package://drake_models/jaco_description/meshes/finger_distal.obj"/>
       </geometry>
-      <material>
+      <material name="black">
         <color rgba="0.5960783 0.5960783 0.5960783 1"/>
       </material>
     </visual>
