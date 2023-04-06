@@ -62,6 +62,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           <color rgba="0.1788232 0.1788232 0.1788232 1"/>
         </material>
 			</visual>
+      <!-- russt: add a box geometry surrounding the base -->
+      <collision>
+        <origin xyz="0 0 0.1071" />
+        <geometry>
+          <box size="0.8106 0.5097 0.3042" />
+        </geometry>
+      </collision>
 		</link>
 
         <joint name="upper_body_joint" type="fixed">

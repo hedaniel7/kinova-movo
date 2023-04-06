@@ -26,7 +26,7 @@ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS 
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-<robot name="movo_base" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="movo_base" xmlns:xacro="http://ros.org/wiki/xacro" xmlns:drake="http://drake.mit.edu">
     <xacro:include filename="$(find movo_description)/urdf/sensors/sick_tim.urdf.xacro" />
     
     <!-- Wheel Mounting Positions and Properties-->
@@ -92,7 +92,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </gazebo>
 		        
         <joint name="base_chassis_joint" type="fixed">
-            <origin xyz="0 0 ${wheel_radius + 0.01}" rpy="0 0 0" />
+            <origin xyz="0 0 ${wheel_radius}" rpy="0 0 0" />
             <parent link="base_link" />
             <child link="base_chassis_link" />
         </joint>
@@ -105,11 +105,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                          iyx="0"  iyy="0.000559" iyz="0"
                          izx="0" izy="0" izz="0.000714" />
 			</inertial>
+      <!-- russt: remove this to avoid collision with the ground and reduce unnecessary complexity.
             <collision>
 				<geometry>
 					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/vector_base_collision.obj" />
 				</geometry>
 			</collision>
+      -->
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
