@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<robot xmlns:xacro="http://ros.org/wiki/xacro" xmlns:drake="http://drake.mit.edu">
 
   <xacro:macro name="robotiq_85_gripper_transmission" params="prefix">
 
@@ -35,6 +35,9 @@
               <actuator name="${prefix}gripper_finger1_motor">
                   <mechanicalReduction>1</mechanicalReduction>
                   <hardwareInterface>PositionJointInterface</hardwareInterface>
+                  <!-- TODO(russt): Find real values for these numbers: -->
+                  <drake:rotor_inertia value='1e-6' />
+                  <drake:gear_ratio value='300' />
               </actuator>
           </transmission>
         </xacro:unless>
