@@ -15,25 +15,27 @@
     </xacro:if>  
     <xacro:unless value="$(optenv WELD_FINGERS false)">
       <xacro:property name="revolute_or_fixed" value="${revolute_or_fixed_1}"/>
-    </xacro:unless>  
+    </xacro:unless>
 
     <xacro:macro name="robotiq_85_gripper" params="prefix parent *origin">
 
-        <joint name="${prefix}kinova_robotiq_coupler_joint" type="fixed">
-            <parent link="${parent}"/>
-            <child link="${prefix}robotiq_coupler_link"/>
-            <xacro:insert_block name="origin"/>
-        </joint>
+        <xacro:if value="${parent != ''}">
+          <joint name="${prefix}kinova_robotiq_coupler_joint" type="fixed">
+              <parent link="${parent}"/>
+              <child link="${prefix}robotiq_coupler_link"/>
+              <xacro:insert_block name="origin"/>
+          </joint>
+        </xacro:if>  
         
         <link name="${prefix}robotiq_coupler_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/kinova_robotiq_coupler.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/visual/kinova_robotiq_coupler.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/kinova_robotiq_coupler.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/collision/kinova_robotiq_coupler.obj"/>
                 </geometry>
             </collision>
             <inertial>
@@ -64,12 +66,12 @@
         <link name="${prefix}gripper_base_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_base_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/visual/robotiq_85_base_link.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_base_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/collision/robotiq_85_base_link.obj"/>
                 </geometry>
             </collision>
             <inertial>
@@ -113,12 +115,12 @@
         <link name="${prefix}gripper_finger1_knuckle_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_knuckle_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/visual/robotiq_85_knuckle_link.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_knuckle_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/collision/robotiq_85_knuckle_link.obj"/>
                 </geometry>
             </collision>
             <inertial>
@@ -141,12 +143,12 @@
         <link name="${prefix}gripper_finger2_knuckle_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_knuckle_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/visual/robotiq_85_knuckle_link.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_knuckle_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/collision/robotiq_85_knuckle_link.obj"/>
                 </geometry>
             </collision>
             <inertial>
@@ -181,12 +183,12 @@
         <link name="${prefix}gripper_finger1_finger_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_finger_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/visual/robotiq_85_finger_link.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_finger_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/collision/robotiq_85_finger_link.obj"/>
                 </geometry>
             </collision>
             <inertial>
@@ -209,12 +211,12 @@
         <link name="${prefix}gripper_finger2_finger_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_finger_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/visual/robotiq_85_finger_link.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_finger_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/collision/robotiq_85_finger_link.obj"/>
                 </geometry>
             </collision>
             <inertial>
@@ -282,13 +284,13 @@
         <link name="${prefix}gripper_finger1_inner_knuckle_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_inner_knuckle_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/visual/robotiq_85_inner_knuckle_link.obj"/>
                 </geometry>
             </visual>
             <!--
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_inner_knuckle_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/collision/robotiq_85_inner_knuckle_link.obj"/>
                 </geometry>
             </collision>
             -->
@@ -312,13 +314,13 @@
         <link name="${prefix}gripper_finger2_inner_knuckle_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_inner_knuckle_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/visual/robotiq_85_inner_knuckle_link.obj"/>
                 </geometry>
             </visual>
             <!--
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_inner_knuckle_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/collision/robotiq_85_inner_knuckle_link.obj"/>
                 </geometry>
             </collision>
             -->
@@ -368,7 +370,7 @@
         <link name="${prefix}gripper_finger1_finger_tip_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_finger_tip_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/visual/robotiq_85_finger_tip_link.obj"/>
                 </geometry>
             </visual>
             <!-- manually add spheres until hydroelastic is enabled -->
@@ -452,7 +454,7 @@
         <link name="${prefix}gripper_finger2_finger_tip_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_finger_tip_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/visual/robotiq_85_finger_tip_link.obj"/>
                 </geometry>
             </visual>
             <collision>
@@ -463,7 +465,7 @@
                 </geometry>
                 <!--
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_finger_tip_link.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/robotiq/collision/robotiq_85_finger_tip_link.obj"/>
                 </geometry>
               -->
             </collision>
@@ -486,6 +488,7 @@
         
         <xacro:robotiq_85_gripper_transmission prefix="${prefix}" />
 
+        <xacro:if value="${parent != ''}">
         <drake:collision_filter_group name="${prefix}link_6_coupler">
           <!-- <drake:member link="${prefix}link_6" /> -->
           <drake:member link="${prefix}wrist_spherical_2_link" />
@@ -493,6 +496,7 @@
           <drake:member link="${prefix}gripper_base_link" />
           <drake:ignored_collision_filter_group name="${prefix}link_6_coupler" />
         </drake:collision_filter_group>
+        </xacro:if>
 
         <drake:collision_filter_group name="${prefix}finger_1">
           <drake:member link="${prefix}gripper_finger1_finger_link" />

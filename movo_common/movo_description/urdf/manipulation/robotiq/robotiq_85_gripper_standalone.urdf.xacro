@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<robot name="robotiq85_gripper" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find movo_description)/urdf/manipulation/robotiq/robotiq_85_gripper.urdf.xacro" />
+
+  <xacro:robotiq_85_gripper prefix="" parent="" >
+    <origin xyz="-0.16 0 0" rpy="${-M_PI} ${M_PI/2} 0"/>
+  </xacro:robotiq_85_gripper>
+
+</robot>

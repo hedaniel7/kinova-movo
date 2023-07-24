@@ -52,7 +52,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>mesh/robotiq_palm.obj</uri>
+            <uri>package://movo_description/meshes/manipulation/robotiq_woven/robotiq_palm.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -95,7 +95,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>mesh/robotiq_finger_85.obj</uri>
+            <uri>package://movo_description/meshes/manipulation/robotiq_woven/robotiq_finger_85.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -156,7 +156,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>mesh/robotiq_85_tip_left.obj</uri>
+            <uri>package://movo_description/meshes/manipulation/robotiq_woven/robotiq_85_tip_left.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -221,7 +221,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>mesh/robotiq_finger_85.obj</uri>
+            <uri>package://movo_description/meshes/manipulation/robotiq_woven/robotiq_finger_85.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -282,7 +282,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>mesh/robotiq_85_tip_right.obj</uri>
+            <uri>package://movo_description/meshes/manipulation/robotiq_woven/robotiq_85_tip_right.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -331,7 +331,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>mesh/robotiq_actuated_link.obj</uri>
+            <uri>package://movo_description/meshes/manipulation/robotiq_woven/robotiq_actuated_link.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -389,7 +389,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>mesh/robotiq_85_parallel_left.obj</uri>
+            <uri>package://movo_description/meshes/manipulation/robotiq_woven/robotiq_85_parallel_left.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -438,7 +438,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>mesh/robotiq_actuated_link_right.obj</uri>
+            <uri>package://movo_description/meshes/manipulation/robotiq_woven/robotiq_actuated_link_right.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -496,7 +496,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>mesh/robotiq_85_parallel_right.obj</uri>
+            <uri>package://movo_description/meshes/manipulation/robotiq_woven/robotiq_85_parallel_right.obj</uri>
           </mesh>
         </geometry>
         <material>
