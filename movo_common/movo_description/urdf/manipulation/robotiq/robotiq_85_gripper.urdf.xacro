@@ -371,21 +371,6 @@
                     <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/visual/robotiq_85_finger_tip_link.obj"/>
                 </geometry>
             </visual>
-            <collision>
-                <!-- box for finger tip computed by measuring in blender -->
-                <origin xyz="0.02575 0.004375 0" />
-                <geometry>
-                    <!-- 
-                    <box size="0.0375 0.00675 0.022" />
-                    -->
-                    <box size="0.037 0.00625 0.0215" />
-                </geometry>
-                <!--
-                <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/robotiq/collision/robotiq_85_finger_tip_link.obj"/>
-                </geometry>
-              -->
-            </collision>
             <!-- manually add spheres until hydroelastic is enabled -->
             <collision>
               <origin xyz="0.007 0.00775 0.011" />

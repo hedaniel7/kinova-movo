@@ -1,0 +1,530 @@
+<sdf version='1.6'>
+  <model name='robotiq_85'>
+    <link name='hand_base_link'>
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.025099 -0.002534 0.015894 0 0 0</pose>
+        <mass>0.090255</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>-6.77626e-21</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='palm_collision_1'>
+        <pose>0.045 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.09 0.032 0.035</size>
+          </box>
+        </geometry>
+        <drake:proximity_properties>
+          <drake:mesh_resolution_hint>0.005</drake:mesh_resolution_hint>
+          <drake:compliant_hydroelastic/>
+          <drake:hydroelastic_modulus>1e8</drake:hydroelastic_modulus>
+          <drake:hunt_crossley_dissipation>5</drake:hunt_crossley_dissipation>
+          <drake:mu_dynamic>0.5</drake:mu_dynamic>
+          <drake:mu_static>0.75</drake:mu_static>
+        </drake:proximity_properties>
+      </collision>
+      <collision name='palm_collision_2'>
+        <pose>0.018 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0375</radius>
+            <length>0.0363</length>
+          </cylinder>
+        </geometry>
+        <drake:proximity_properties>
+          <drake:mesh_resolution_hint>0.005</drake:mesh_resolution_hint>
+          <drake:compliant_hydroelastic/>
+          <drake:hydroelastic_modulus>1e8</drake:hydroelastic_modulus>
+          <drake:hunt_crossley_dissipation>5</drake:hunt_crossley_dissipation>
+          <drake:mu_dynamic>0.5</drake:mu_dynamic>
+          <drake:mu_static>0.75</drake:mu_static>
+        </drake:proximity_properties>
+      </collision>
+      <visual name='palm_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>mesh/robotiq_palm.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.1 0.1 0.1 0.4</diffuse>
+        </material>
+      </visual>
+    </link>
+    <link name='l_finger_link'>
+      <pose>0.06142 0.0127 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_finger_link_collision'>
+        <pose>0.046 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.03 0.012 0.027</size>
+          </box>
+        </geometry>
+        <drake:proximity_properties>
+          <drake:mesh_resolution_hint>0.005</drake:mesh_resolution_hint>
+          <drake:compliant_hydroelastic/>
+          <drake:hydroelastic_modulus>1e8</drake:hydroelastic_modulus>
+          <drake:hunt_crossley_dissipation>5</drake:hunt_crossley_dissipation>
+          <drake:mu_dynamic>0.5</drake:mu_dynamic>
+          <drake:mu_static>0.75</drake:mu_static>
+        </drake:proximity_properties>
+      </collision>
+      <visual name='l_finger_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>mesh/robotiq_finger_85.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.1 0.1 0.1 0.4</diffuse>
+        </material>
+      </visual>
+    </link>
+    <joint name='l_finger_joint' type='revolute'>
+      <child>l_finger_link</child>
+      <parent>hand_base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.1</lower>
+          <upper>0.733</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='l_tip_link'>
+      <pose>0.11857 0.0127 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_tip_link_collision'>
+        <pose>0.026 -0.004157 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.036 0.0064 0.022</size>
+          </box>
+        </geometry>
+        <drake:proximity_properties>
+          <drake:mesh_resolution_hint>0.005</drake:mesh_resolution_hint>
+          <drake:compliant_hydroelastic/>
+          <drake:hydroelastic_modulus>1e8</drake:hydroelastic_modulus>
+          <drake:hunt_crossley_dissipation>5</drake:hunt_crossley_dissipation>
+          <drake:mu_dynamic>0.5</drake:mu_dynamic>
+          <drake:mu_static>0.75</drake:mu_static>
+        </drake:proximity_properties>
+      </collision>
+      <visual name='l_tip_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>mesh/robotiq_85_tip_left.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.1 0.1 0.1 0.4</diffuse>
+        </material>
+      </visual>
+    </link>
+    <joint name='l_tip_joint' type='revolute'>
+      <child>l_tip_link</child>
+      <parent>l_finger_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>0.1</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <frame name='l_tip_bushing' attached_to='l_tip_link'>
+      <pose relative_to='l_tip_link'>-0.006515 0.0179 0 0 0 0</pose>
+    </frame>
+
+    <link name='r_finger_link'>
+      <pose>0.06142 -0.0127 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_finger_link_collision'>
+        <pose>0.046 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.03 0.012 0.027</size>
+          </box>
+        </geometry>
+        <drake:proximity_properties>
+          <drake:mesh_resolution_hint>0.005</drake:mesh_resolution_hint>
+          <drake:compliant_hydroelastic/>
+          <drake:hydroelastic_modulus>1e8</drake:hydroelastic_modulus>
+          <drake:hunt_crossley_dissipation>5</drake:hunt_crossley_dissipation>
+          <drake:mu_dynamic>0.5</drake:mu_dynamic>
+          <drake:mu_static>0.75</drake:mu_static>
+        </drake:proximity_properties>
+      </collision>
+      <visual name='r_finger_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>mesh/robotiq_finger_85.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.1 0.1 0.1 0.4</diffuse>
+        </material>
+      </visual>
+    </link>
+    <joint name='r_finger_joint' type='revolute'>
+      <child>r_finger_link</child>
+      <parent>hand_base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.733</lower>
+          <upper>0.1</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='r_tip_link'>
+      <pose>0.11857 -0.0127 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_tip_link_collision'>
+        <pose>0.026 0.004157 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.036 0.0064 0.022</size>
+          </box>
+        </geometry>
+        <drake:proximity_properties>
+          <drake:mesh_resolution_hint>0.005</drake:mesh_resolution_hint>
+          <drake:compliant_hydroelastic/>
+          <drake:hydroelastic_modulus>1e8</drake:hydroelastic_modulus>
+          <drake:hunt_crossley_dissipation>5</drake:hunt_crossley_dissipation>
+          <drake:mu_dynamic>0.5</drake:mu_dynamic>
+          <drake:mu_static>0.75</drake:mu_static>
+        </drake:proximity_properties>
+      </collision>
+      <visual name='r_tip_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>mesh/robotiq_85_tip_right.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.1 0.1 0.1 0.4</diffuse>
+        </material>
+      </visual>
+    </link>
+    <joint name='r_tip_joint' type='revolute'>
+      <child>r_tip_link</child>
+      <parent>r_finger_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.1</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <frame name='r_tip_bushing' attached_to='r_tip_link'>
+      <pose relative_to='r_tip_link'>-0.006515 -0.0179 0 0 0 0</pose>
+    </frame>
+
+    <link name='l_actuated_link'>
+      <pose>0.054905 0.030601 0 0 0 1.5708</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <visual name='l_actuated_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>mesh/robotiq_actuated_link.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.1 0.1 0.1 0.4</diffuse>
+        </material>
+      </visual>
+    </link>
+    <joint name='l_actuated_joint' type='revolute'>
+      <child>l_actuated_link</child>
+      <parent>hand_base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.7</lower>
+          <upper>0.12</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='l_parallel_link'>
+      <pose>0.054905 0.062351 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_parallel_link_collision'>
+        <pose>0.024 0.006 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.06 0.005 0.027</size>
+          </box>
+        </geometry>
+        <drake:proximity_properties>
+          <drake:mu_dynamic>0.5</drake:mu_dynamic>
+          <drake:mu_static>0.75</drake:mu_static>
+        </drake:proximity_properties>
+      </collision>
+      <visual name='l_parallel_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>mesh/robotiq_85_parallel_left.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.1 0.1 0.1 0.4</diffuse>
+        </material>
+      </visual>
+    </link>
+    <joint name='l_parallel_joint' type='revolute'>
+      <child>l_parallel_link</child>
+      <parent>l_actuated_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.7</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <frame name='l_parallel_bushing' attached_to='l_parallel_link'>
+      <pose relative_to='l_parallel_link'>0.04752 0 0 0 0 0</pose>
+    </frame>
+
+    <link name='r_actuated_link'>
+      <pose>0.054905 -0.030601 0 0 0 -1.5708</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <visual name='r_actuated_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>mesh/robotiq_actuated_link_right.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.1 0.1 0.1 0.4</diffuse>
+        </material>
+      </visual>
+    </link>
+    <joint name='r_actuated_joint' type='revolute'>
+      <child>r_actuated_link</child>
+      <parent>hand_base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.12</lower>
+          <upper>0.7</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='r_parallel_link'>
+      <pose>0.054905 -0.062351 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_parallel_link_collision'>
+        <pose>0.024 -0.006 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.06 0.005 0.027</size>
+          </box>
+        </geometry>
+        <drake:proximity_properties>
+          <drake:mu_dynamic>0.5</drake:mu_dynamic>
+          <drake:mu_static>0.75</drake:mu_static>
+        </drake:proximity_properties>
+      </collision>
+      <visual name='r_parallel_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>mesh/robotiq_85_parallel_right.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.1 0.1 0.1 0.4</diffuse>
+        </material>
+      </visual>
+    </link>
+    <joint name='r_parallel_joint' type='revolute'>
+      <child>r_parallel_link</child>
+      <parent>r_actuated_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.7</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <frame name='r_parallel_bushing' attached_to='r_parallel_link'>
+      <pose relative_to='r_parallel_link'>0.04752 0 0 0 0 0</pose>
+    </frame>
+
+  </model>
+</sdf>
