@@ -108,14 +108,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <!-- russt: remove this to avoid collision with the ground and reduce unnecessary complexity.
             <collision>
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/vector_base_collision.obj" />
+					<mesh filename="package://movo_description/meshes/movo_components/collision/vector_base_collision.obj" />
 				</geometry>
 			</collision>
       -->
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/visual/vector_base.obj" />
+					<mesh filename="package://movo_description/meshes/movo_components/visual/vector_base.obj" />
 				</geometry>
         <material name="black">
           <color rgba="0.1788232 0.1788232 0.1788232 1"/>
@@ -148,13 +148,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <!-- russt: removed this because it was causing self collisions 
             <collision>
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/movo_fixed_body_collision.obj" />
+					<mesh filename="package://movo_description/meshes/movo_components/collision/movo_fixed_body_collision.obj" />
 				</geometry>
 			</collision>
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/movo_fixed_body_collision.obj" />
+					<mesh filename="package://movo_description/meshes/movo_components/collision/movo_fixed_body_collision.obj" />
 				</geometry>
 			</visual>
       -->
@@ -177,13 +177,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <!--
 		    <visual>
 			    <geometry>
-				    <mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/movo_upper_body_collision.obj" />
+				    <mesh filename="package://movo_description/meshes/movo_components/collision/movo_upper_body_collision.obj" />
 			    </geometry>
 		    </visual>-->
         <!-- russt: removed this because it was causing self-collisions 
 		    <collision>
 			    <geometry>
-				    <mesh filename="package://QR/movo_description_drake/meshes/movo_components/collision/movo_upper_body_collision.obj" />
+				    <mesh filename="package://movo_description/meshes/movo_components/collision/movo_upper_body_collision.obj" />
 			    </geometry>
 		    </collision>
         -->

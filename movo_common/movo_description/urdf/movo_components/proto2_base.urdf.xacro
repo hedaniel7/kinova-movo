@@ -54,13 +54,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			</inertial>
             <collision>
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/proto2/collision/proto2_base_collision.dae" />
+					<mesh filename="package://movo_description/meshes/proto2/collision/proto2_base_collision.dae" />
 				</geometry>
 			</collision>
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/proto2/visual/proto2_base.dae"  />
+					<mesh filename="package://movo_description/meshes/proto2/visual/proto2_base.dae"  />
 				</geometry>
 			</visual>
 		</link>

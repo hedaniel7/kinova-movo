@@ -61,12 +61,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${prefix}base_link" >
             <visual>
                 <geometry>
-                <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/base.obj"/>
+                <mesh filename="package://movo_description/meshes/manipulation/jaco/visual/base.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/collision/base.obj"/>
+                <mesh filename="package://movo_description/meshes/manipulation/jaco/collision/base.obj"/>
                 </geometry>
             </collision>
             <inertial>
@@ -100,12 +100,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${prefix}shoulder_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/shoulder_7dof.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/jaco/visual/shoulder_7dof.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/collision/shoulder_7dof.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/jaco/collision/shoulder_7dof.obj"/>
                 </geometry>
             </collision>
             <inertial>
@@ -139,12 +139,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${prefix}arm_half_1_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/arm_half_1.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/jaco/visual/arm_half_1.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/collision/arm_half_1.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/jaco/collision/arm_half_1.obj"/>
                 </geometry>
             </collision>
             <inertial>
@@ -178,12 +178,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          <link name="${prefix}arm_half_2_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/arm_half_2.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/jaco/visual/arm_half_2.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/collision/arm_half_2.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/jaco/collision/arm_half_2.obj"/>
                 </geometry>
             </collision>
             <inertial>
@@ -217,12 +217,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${prefix}forearm_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/forearm_7dof.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/jaco/visual/forearm_7dof.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/collision/forearm_7dof.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/jaco/collision/forearm_7dof.obj"/>
                 </geometry>
             </collision>
             <inertial>
@@ -247,12 +247,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${prefix}wrist_spherical_1_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/wrist_spherical_1.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/jaco/visual/wrist_spherical_1.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/collision/wrist_spherical_1.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/jaco/collision/wrist_spherical_1.obj"/>
                 </geometry>
             </collision>
             <inertial>
@@ -286,12 +286,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${prefix}wrist_spherical_2_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/wrist_spherical_2.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/jaco/visual/wrist_spherical_2.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/collision/wrist_spherical_2.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/jaco/collision/wrist_spherical_2.obj"/>
                 </geometry>
             </collision>
             <inertial>
@@ -326,12 +326,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${prefix}wrist_3_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/visual/kinova_actuator_gearing.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/jaco/visual/kinova_actuator_gearing.obj"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/manipulation/jaco/collision/kinova_actuator_gearing.obj"/>
+                    <mesh filename="package://movo_description/meshes/manipulation/jaco/collision/kinova_actuator_gearing.obj"/>
                 </geometry>
             </collision>
             <inertial>

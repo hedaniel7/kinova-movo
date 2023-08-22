@@ -53,7 +53,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             </inertial>
 			<visual>
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/sensors/visual/kinect_one.obj" />
+					<mesh filename="package://movo_description/meshes/sensors/visual/kinect_one.obj" />
 				</geometry>
         <material name="black">
           <color rgba="0.1788232 0.1788232 0.1788232 1"/>
@@ -61,7 +61,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/sensors/collision/kinect_one_collision.obj" />
+					<mesh filename="package://movo_description/meshes/sensors/collision/kinect_one_collision.obj" />
 				</geometry>
 			</collision>
 		</link>

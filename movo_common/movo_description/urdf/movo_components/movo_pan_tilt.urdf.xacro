@@ -42,7 +42,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    <link name="pan_base_link">
 			<visual>
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/pan_tilt/visual/pan_tilt_base.obj" />
+					<mesh filename="package://movo_description/meshes/pan_tilt/visual/pan_tilt_base.obj" />
 				</geometry>
         <material name="black">
           <color rgba="0.1788232 0.1788232 0.1788232 1"/>
@@ -50,7 +50,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/pan_tilt/collision/pan_tilt_base.obj" />
+					<mesh filename="package://movo_description/meshes/pan_tilt/collision/pan_tilt_base.obj" />
 				</geometry>
 			</collision>
             <inertial>
@@ -83,7 +83,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    <link name="pan_link">
 			<visual>
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/pan_tilt/visual/pan_link.obj" />
+					<mesh filename="package://movo_description/meshes/pan_tilt/visual/pan_link.obj" />
 				</geometry>
         <material name="black">
           <color rgba="0.1788232 0.1788232 0.1788232 1"/>
@@ -92,7 +92,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<collision>
 			    <origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/pan_tilt/collision/pan_link.obj" />
+					<mesh filename="package://movo_description/meshes/pan_tilt/collision/pan_link.obj" />
 				</geometry>
 			</collision>
             <inertial>
@@ -125,7 +125,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    <link name="tilt_link">
 			<visual>
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/pan_tilt/visual/tilt_link.obj" />
+					<mesh filename="package://movo_description/meshes/pan_tilt/visual/tilt_link.obj" />
 				</geometry>
         <material name="black">
           <color rgba="0.1788232 0.1788232 0.1788232 1"/>
@@ -133,7 +133,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="package://QR/movo_description_drake/meshes/pan_tilt/collision/tilt_link.obj" />
+					<mesh filename="package://movo_description/meshes/pan_tilt/collision/tilt_link.obj" />
 				</geometry>
 			</collision>
             <inertial>

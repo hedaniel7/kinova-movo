@@ -39,7 +39,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <link name="${laser_prefix}_laser_link">
 <!--            <visual>
                 <geometry>
-                    <mesh filename="package://QR/movo_description_drake/meshes/sensors/visual/sick_tim.obj" />
+                    <mesh filename="package://movo_description/meshes/sensors/visual/sick_tim.obj" />
                 </geometry>
             </visual> -->
             <collision>
@@ -48,7 +48,19 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                 </geometry>
             </collision>
         </link>
-
+        <joint name="${laser_prefix}_laser_joint_virtual" type="fixed">
+          <origin rpy="-1.570795 0 -1.570795" xyz="0.0 0 0"/>
+          <parent link="${laser_prefix}_laser_link"/>
+          <child link="${laser_prefix}_laser_link_virtual"/>
+        </joint>
+        <link name="${laser_prefix}_laser_link_virtual">
+          <collision>
+            <geometry>
+              <box size="0.001 0.001 0.001"/>
+            </geometry>
+          </collision>
+          </link>
+          
         <gazebo reference="${laser_prefix}_laser_link">
             <sensor type="ray" name="${laser_prefix}_laser">
                 <pose>0 0 0 0 0 0</pose>
